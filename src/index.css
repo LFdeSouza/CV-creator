@@ -1,13 +1,152 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+:root {
+  --header-color: #364fc7;
+  --cv-header-font: #303c75;
+  --font-color: #343a40;
+  --backgound-color: #f8f9fa;
+  --btn-color: #5c7cfa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-color);
+  background-color: var(--backgound-color);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0fr 1fr;
+  justify-content: center;
+}
+
+/* ********** header  ********** */
+
+header {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--header-color);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 4rem;
+}
+
+/* ********** CV form  ********** */
+.form-section {
+  grid-row: 2;
+  margin: 4rem 4rem 4rem 4rem;
+  padding: 1rem;
+  box-shadow: 1px 1px 6px 2px rgb(0 0 0 / 15%);
+}
+
+.form-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-section:first-child {
+  margin-top: 2rem;
+}
+
+.form-sections input {
+  width: 80%;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid var(--font-color);
+}
+
+.form-section input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--font-color);
+}
+
+.form-sections h2 {
+  margin: 1rem;
+  color: var(--cv-header-font);
+}
+
+.description {
+  border: none;
+  width: 80%;
+  font-size: 1.1rem;
+  height: 4rem;
+  resize: none;
+  border-bottom: 1px solid var(--font-color);
+}
+
+.description:focus {
+  outline: none;
+  border-bottom: 2px solid var(--font-color);
+}
+
+.btn {
+  font-size: 1.1rem;
+  padding: 0.2rem;
+  margin: 0.3rem;
+  width: 81%;
+  background-color: var(--btn-color);
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.experience > .btn:first-of-type {
+  margin-top: 1rem;
+}
+
+.education > .btn:first-of-type {
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--header-color);
+}
+.btn:active {
+  transform: scale(0.99);
+}
+
+/* ********** CV form  ********** */
+
+.cv-page {
+  grid-row: 2;
+  margin: 4rem 4rem 4rem 4rem;
+  padding: 3rem;
+  box-shadow: 1px 1px 6px 2px rgb(0 0 0 / 15%);
+}
+
+.cv-header {
+  background-color: var(--backgound-color);
+  color: var(--cv-header-font);
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--header-color);
+}
+
+.cv-header h2 {
+  font-size: 2.5rem;
+}
+
+.cv-header p {
+  font-size: 1.5rem;
+}
+
+.cv-description {
+  margin-top: 1rem;
 }

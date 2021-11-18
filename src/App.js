@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Education from "./components/Form/Education";
+import Personal from "./components/Form/PersonalInfo";
+import Experience from "./components/Form/Experience";
+import Header from "./components/Form/Header";
+import CvHeader from "./components/CvPage/CvHeader";
+import CvDescription from "./components/CvPage/CvDescription";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <section className="form-section">
+        <Personal />
+        <Experience />
+        <Education />
+      </section>
+
+      <section className="cv-page">
+        <CvHeader />
+        <CvDescription />
+      </section>
     </div>
   );
 }
