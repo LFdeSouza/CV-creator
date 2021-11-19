@@ -5,6 +5,8 @@ import Experience from "./components/Form/Experience";
 import Header from "./components/Form/Header";
 import CvHeader from "./components/CvPage/CvHeader";
 import CvDescription from "./components/CvPage/CvDescription";
+import CvWorkExperience from "./components/CvPage/CvWorkExperience";
+import CvEducation from "./components/CvPage/CvEducation";
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
       <section className="cv-page">
         <CvHeader />
         <CvDescription />
+        <h2>Work Experience</h2>
+        <CvWorkExperience />
+        <h2>Education</h2>
+        <CvEducation />
       </section>
     </div>
   );

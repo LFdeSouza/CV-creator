@@ -61,6 +61,7 @@ header h1 {
 }
 
 .form-sections input {
+  background-color: var(--backgound-color);
   width: 80%;
   padding: 0.2rem;
   margin: 0.1rem;
@@ -80,6 +81,7 @@ header h1 {
 }
 
 .description {
+  background-color: var(--backgound-color);
   border: none;
   width: 80%;
   font-size: 1.1rem;
@@ -129,6 +131,10 @@ header h1 {
   box-shadow: 1px 1px 6px 2px rgb(0 0 0 / 15%);
 }
 
+.cv-page > h2 {
+  color: var(--cv-header-font);
+  margin: 1.5rem 0 1rem 0;
+}
 .cv-header {
   background-color: var(--backgound-color);
   color: var(--cv-header-font);
@@ -149,4 +155,16 @@ header h1 {
 
 .cv-description {
   margin-top: 1rem;
+}
+
+.cv-experience-container {
+  display: flex;
+  align-content: center;
+  gap: 7rem;
+}
+
+.cv-education-container {
+  display: flex;
+  align-content: center;
+  gap: 7rem;
 }
