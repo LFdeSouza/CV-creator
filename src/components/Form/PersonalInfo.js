@@ -1,14 +1,44 @@
-const Personal = () => {
+const Personal = ({ getInfo }) => {
   return (
     <section className="form-sections">
       <h2>Personal Information</h2>
-      <input type="text" placeholder="First name" />
-      <input type="text" placeholder="Last name" />
-      <input type="text" placeholder="Title" />
-      <input type="text" placeholder="Address" />
-      <input type="text" placeholder="Phone number" />
-      <input type="text" placeholder="Email" />
-      <textarea type="text" placeholder="Description" className="description" />
+      <input
+        type="text"
+        placeholder="Full name"
+        name="name"
+        onChange={(e) => getInfo(e.target.name, e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Title"
+        name="title"
+        onChange={(e) => getInfo(e.target.name, e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Address"
+        name="address"
+        onChange={(e) => getInfo(e.target.name, e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Phone number"
+        name="phone"
+        onChange={(e) => getInfo(e.target.name, e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Email"
+        name="email"
+        onChange={(e) => getInfo(e.target.name, e.target.value)}
+      />
+      <textarea
+        type="text"
+        className="description"
+        placeholder="Description"
+        name="description"
+        onChange={(e) => getInfo(e.target.name, e.target.value)}
+      />
     </section>
   );
 };

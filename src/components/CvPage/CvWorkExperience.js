@@ -1,14 +1,20 @@
-const CvWorkExperience = () => {
+const CvWorkExperience = ({
+  position = "Position",
+  company = "Company",
+  workCity = "City",
+  workFrom = "From",
+  workTo = "to",
+}) => {
   return (
     <section className="cv-experience-container">
       <div className="work-experience">
         <p>
-          <strong>from - to</strong>
+          <strong>{`${workFrom} - ${workTo}`}</strong>
         </p>
       </div>
       <div className="position-company">
-        <p>Position</p>
-        <p>company, city</p>
+        <p>{position}</p>
+        <p>{`${company}, ${workCity}`}</p>
       </div>
     </section>
   );

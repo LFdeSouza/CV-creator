@@ -1,11 +1,9 @@
-const CvDescription = () => {
-  return (
-    <p className="cv-description">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptatem
-      quia a? Dolor, adipisci quis? Id maiores quidem nam fugiat odio neque,
-      impedit nemo magnam nulla atque libero reiciendis harum ut minus quis
-      temporibus sapiente!
-    </p>
-  );
+const CvDescription = ({ description }) => {
+  return <p className="cv-description">{description}</p>;
 };
 export default CvDescription;
+
+CvDescription.defaultProps = {
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+};

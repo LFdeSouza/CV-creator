@@ -131,17 +131,16 @@ header h1 {
   box-shadow: 1px 1px 6px 2px rgb(0 0 0 / 15%);
 }
 
-.cv-page > h2 {
-  color: var(--cv-header-font);
-  margin: 1.5rem 0 1rem 0;
+.cv-page h2 {
+  margin-top: 1rem;
 }
 .cv-header {
   background-color: var(--backgound-color);
   color: var(--cv-header-font);
-  height: 6rem;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 2px solid var(--header-color);
 }
 
@@ -153,7 +152,12 @@ header h1 {
   font-size: 1.5rem;
 }
 
+.other-info p {
+  color: var(--font-color);
+  font-size: 0.7rem;
+}
 .cv-description {
+  font-family: "Montserrat", sans-serif;
   margin-top: 1rem;
 }
 
