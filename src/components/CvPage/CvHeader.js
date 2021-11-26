@@ -1,20 +1,14 @@
-const CvHeader = ({
-  name = "Full Name",
-  title = "title",
-  address = "address",
-  phone = "phone",
-  email = "email",
-}) => {
+const CvHeader = ({ personalData }) => {
   return (
     <header className="cv-header">
       <div className="cv-name-cotainer">
-        <h2>{name}</h2>
-        <p className="title">{title}</p>
+        <h2>{personalData.name}</h2>
+        <p className="title">{personalData.title}</p>
       </div>
       <div className="other-info">
-        <p>{`address: ${address}`}</p>
-        <p>{`phone: ${phone}`}</p>
-        <p>{`email: ${email}`}</p>
+        <p>{`address: ${personalData.address}`}</p>
+        <p>{`phone: ${personalData.phone}`}</p>
+        <p>{`email: ${personalData.email}`}</p>
       </div>
     </header>
   );

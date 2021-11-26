@@ -1,21 +1,18 @@
-const CvWorkExperience = ({
-  position = "Position",
-  company = "Company",
-  workCity = "City",
-  workFrom = "From",
-  workTo = "to",
-}) => {
+import CvWorkExperienceItem from "./CvWorkExperienceItem";
+
+const CvWorkExperience = ({ workExperienceData }) => {
   return (
     <section className="cv-experience-container">
-      <div className="work-experience">
-        <p>
-          <strong>{`${workFrom} - ${workTo}`}</strong>
-        </p>
-      </div>
-      <div className="position-company">
-        <p>{position}</p>
-        <p>{`${company}, ${workCity}`}</p>
-      </div>
+      {workExperienceData.map((item) => (
+        <CvWorkExperienceItem
+          key={item.id}
+          position={item.position}
+          company={item.company}
+          workCity={item.workCity}
+          workFrom={item.workFrom}
+          workTo={item.workTo}
+        />
+      ))}
     </section>
   );
 };

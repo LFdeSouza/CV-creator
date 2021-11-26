@@ -20,6 +20,20 @@ function App() {
     }));
   };
 
+  const updateDataField = (field, id, name, value) => {
+    return cvData[field].map((item) => {
+      if (item.id === id) return { ...item, [name]: value };
+      return { ...item };
+    });
+  };
+
+  const getInfo = (field, id, name, value) => {
+    setData((prevData) => ({
+      ...prevData,
+      [field]: updateDataField(field, id, name, value),
+    }));
+  };
+
   const addExperienceField = () =>
     setData((prevData) => ({
       ...prevData,
@@ -36,10 +50,27 @@ function App() {
       ],
     }));
 
-  const deleteExperienceField = (id) => {
+  const addEducationField = () =>
     setData((prevData) => ({
       ...prevData,
-      experience: [...prevData.experience.filter((field) => field.id !== id)],
+      education: [
+        ...prevData.education,
+        {
+          id: uuidv4(),
+          universityName: "University",
+          universityCity: "City",
+          degree: "Degree",
+          subject: "Subject",
+          studyFrom: "From",
+          studyTo: "to",
+        },
+      ],
+    }));
+
+  const deleteFormField = (field, id) => {
+    setData((prevData) => ({
+      ...prevData,
+      [field]: [...prevData[field].filter((item) => item.id !== id)],
     }));
   };
 
@@ -51,37 +82,24 @@ function App() {
         <Experience
           experienceField={cvData.experience}
           onAdd={addExperienceField}
-          onDelete={deleteExperienceField}
+          onDelete={deleteFormField}
+          getInfo={getInfo}
         />
-        {/* <Education getInfo={getInfo} /> */}
+        <Education
+          educationData={cvData.education}
+          onAdd={addEducationField}
+          onDelete={deleteFormField}
+          getInfo={getInfo}
+        />
       </section>
 
       <section className="cv-page">
-        <CvHeader
-          name={cvData.personal.name}
-          title={cvData.personal.title}
-          address={cvData.personal.address}
-          phone={cvData.personal.phone}
-          email={cvData.personal.email}
-        />
+        <CvHeader personalData={cvData.personal} />
         <CvDescription description={cvData.personal.description} />
         <h2>Work Experience</h2>
-        <CvWorkExperience
-          position={cvData.experience.position}
-          company={cvData.experience.company}
-          workCity={cvData.experience.workCity}
-          workFrom={cvData.experience.workFrom}
-          workTo={cvData.experience.workTo}
-        />
+        <CvWorkExperience workExperienceData={cvData.experience} />
         <h2>Education</h2>
-        <CvEducation
-          universityName={cvData.education.universityName}
-          universityCity={cvData.education.universityCity}
-          degree={cvData.education.degree}
-          subject={cvData.education.subject}
-          studyFrom={cvData.education.studyFrom}
-          studyTo={cvData.education.studyTo}
-        />
+        <CvEducation educationData={cvData.education} />
       </section>
     </div>
   );

@@ -1,7 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 
 const CvData = {
-  personal: {},
+  personal: {
+    name: "Full Name",
+    title: "title",
+    address: "address",
+    phone: "phone",
+    email: "email",
+  },
   experience: [
     {
       id: uuidv4(),

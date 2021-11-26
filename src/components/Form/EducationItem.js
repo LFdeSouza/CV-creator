@@ -1,25 +1,12 @@
-const ExperienceItem = ({ id, onDelete, getInfo }) => (
+const EducationItem = ({ id, getInfo, onDelete }) => (
   <div id={id} className="forms">
     <input
       type="text"
-      placeholder="Position"
-      name="position"
+      placeholder="University name"
+      name="universityName"
       onChange={(e) =>
         getInfo(
-          "experience",
-          e.target.parentElement.id,
-          e.target.name,
-          e.target.value
-        )
-      }
-    />
-    <input
-      type="text"
-      placeholder="Company"
-      name="company"
-      onChange={(e) =>
-        getInfo(
-          "experience",
+          "education",
           e.target.parentElement.id,
           e.target.name,
           e.target.value
@@ -29,10 +16,36 @@ const ExperienceItem = ({ id, onDelete, getInfo }) => (
     <input
       type="text"
       placeholder="City"
-      name="workCity"
+      name="universityCity"
       onChange={(e) =>
         getInfo(
-          "experience",
+          "education",
+          e.target.parentElement.id,
+          e.target.name,
+          e.target.value
+        )
+      }
+    />
+    <input
+      type="text"
+      placeholder="Degree"
+      name="degree"
+      onChange={(e) =>
+        getInfo(
+          "education",
+          e.target.parentElement.id,
+          e.target.name,
+          e.target.value
+        )
+      }
+    />
+    <input
+      type="text"
+      placeholder="Subject"
+      name="subject"
+      onChange={(e) =>
+        getInfo(
+          "education",
           e.target.parentElement.id,
           e.target.name,
           e.target.value
@@ -42,10 +55,10 @@ const ExperienceItem = ({ id, onDelete, getInfo }) => (
     <input
       type="text"
       placeholder="From"
-      name="workFrom"
+      name="studyFrom"
       onChange={(e) =>
         getInfo(
-          "experience",
+          "education",
           e.target.parentElement.id,
           e.target.name,
           e.target.value
@@ -55,10 +68,10 @@ const ExperienceItem = ({ id, onDelete, getInfo }) => (
     <input
       type="text"
       placeholder="To"
-      name="workTo"
+      name="studyTo"
       onChange={(e) =>
         getInfo(
-          "experience",
+          "education",
           e.target.parentElement.id,
           e.target.name,
           e.target.value
@@ -67,11 +80,11 @@ const ExperienceItem = ({ id, onDelete, getInfo }) => (
     />
     <button
       className="btn"
-      onClick={(e) => onDelete("experience", e.target.parentElement.id)}
+      onClick={(e) => onDelete("education", e.target.parentElement.id)}
     >
       Delete
     </button>
   </div>
 );
 
-export default ExperienceItem;
+export default EducationItem;
