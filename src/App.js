@@ -11,17 +11,17 @@ import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
 function App() {
-  const [cvData, setInfo] = useState(CvData);
+  const [cvData, setData] = useState(CvData);
 
   const getPersonalInfo = (name, value) => {
-    setInfo((prevData) => ({
+    setData((prevData) => ({
       ...prevData,
       personal: { ...prevData.personal, [name]: value },
     }));
   };
 
   const addExperienceField = () =>
-    setInfo((prevData) => ({
+    setData((prevData) => ({
       ...prevData,
       experience: [
         ...prevData.experience,
@@ -35,6 +35,14 @@ function App() {
         },
       ],
     }));
+
+  const deleteExperienceField = (id) => {
+    setData((prevData) => ({
+      ...prevData,
+      experience: [...prevData.experience.filter((field) => field.id !== id)],
+    }));
+  };
+
   return (
     <div className="app">
       <Header />
@@ -43,6 +51,7 @@ function App() {
         <Experience
           experienceField={cvData.experience}
           onAdd={addExperienceField}
+          onDelete={deleteExperienceField}
         />
         {/* <Education getInfo={getInfo} /> */}
       </section>
