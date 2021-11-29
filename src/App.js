@@ -8,7 +8,8 @@ import CvWorkExperience from "./components/CvPage/CvWorkExperience";
 import CvEducation from "./components/CvPage/CvEducation";
 import CvData from "./components/CvPage/CvData";
 import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 function App() {
   const [cvData, setData] = useState(CvData);
@@ -74,6 +75,11 @@ function App() {
     }));
   };
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
     <div className="app">
       <Header />
@@ -90,15 +96,14 @@ function App() {
           onAdd={addEducationField}
           onDelete={deleteFormField}
           getInfo={getInfo}
+          onPrint={handlePrint}
         />
       </section>
 
-      <section className="cv-page">
+      <section ref={componentRef} className="cv-page">
         <CvHeader personalData={cvData.personal} />
         <CvDescription description={cvData.personal.description} />
-        <h2>Work Experience</h2>
         <CvWorkExperience workExperienceData={cvData.experience} />
-        <h2>Education</h2>
         <CvEducation educationData={cvData.education} />
       </section>
     </div>

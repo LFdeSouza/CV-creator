@@ -1,6 +1,6 @@
 import EducationItem from "./EducationItem";
 
-const Education = ({ educationData, getInfo, onDelete, onAdd }) => {
+const Education = ({ educationData, getInfo, onDelete, onAdd, onPrint }) => {
   return (
     <section className="form-sections education">
       <h2>Education</h2>
@@ -14,6 +14,9 @@ const Education = ({ educationData, getInfo, onDelete, onAdd }) => {
       ))}
       <button className="btn" onClick={onAdd}>
         Add
+      </button>
+      <button className="btn" onClick={onPrint}>
+        Print CV
       </button>
     </section>
   );

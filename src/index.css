@@ -134,6 +134,7 @@ header h1 {
 /* ********** CV form  ********** */
 
 .cv-page {
+  height: 55rem;
   grid-row: 2;
   margin: 4rem 4rem 4rem 4rem;
   padding: 3rem;
